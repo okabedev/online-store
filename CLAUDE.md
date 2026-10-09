@@ -14,6 +14,14 @@
 - 설정값·비밀값은 환경 변수나 설정 파일로 분리하고, 비밀값은 커밋하지 않는다.
 - 예외 처리, 입력 검증, 로깅, 보안을 처음부터 고려한다.
 - 의미 있는 설계 결정은 문서(README 또는 `docs/`)에 남긴다.
+- 사용처가 없는 의존성·설정·선언은 미리 넣지 않는다. 실제로 쓰는 작업에서 추가한다.
+- 큰 작업은 단계로 나누고 한 단계(Issue 하나)를 마친 뒤 사용자와 다음 단계를 정한다.
+
+## 저장소 구조
+- 애플리케이션은 `app/` 디렉터리의 **독립 단일 모듈 Gradle 프로젝트**다(Spring Boot + Thymeleaf 모놀리스). 저장소 루트에는 `.github/`, `CLAUDE.md`, 문서 등 저장소 메타만 둔다.
+- 루트에 Gradle 빌드 파일(`settings.gradle.kts`, `build.gradle.kts`, `gradlew`)을 만들지 않는다. Gradle 멀티 프로젝트(`include`)도 도입하지 않는다.
+- 앱 전용 설정(`.gitignore`, `.gitattributes` 등)은 루트가 아니라 `app/` 안에 둔다.
+- 앱 관련 세부 규칙은 `app/CLAUDE.md`를 따른다.
 
 ## Git 규칙 요약
 - 작업 흐름: **Issue → feature 브랜치 → 커밋 → PR → develop 머지**.
