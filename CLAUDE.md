@@ -23,6 +23,12 @@
 - 앱 전용 설정(`.gitignore`, `.gitattributes` 등)은 루트가 아니라 `app/` 안에 둔다.
 - 앱 관련 세부 규칙은 `app/CLAUDE.md`를 따른다.
 
+## 단계별 개발
+- 개발 순서와 단계별 목표·범위·완료 조건은 `docs/roadmap.md`에 있다. 한 세션은 한 단계(또는 그 안의 Issue 몇 개)만 다룬다.
+- 세션을 시작하면 `docs/roadmap.md`의 진행 현황, 진행할 단계의 섹션, 결정 기록을 먼저 읽는다.
+- 단계를 시작할 때는 해당 단계의 "시작 전 결정할 사항"을 사용자와 먼저 확정한 뒤 Issue를 만든다.
+- Issue를 마칠 때 `docs/roadmap.md`의 진행 현황과 결정 기록을 갱신하고, 이 갱신은 해당 작업 PR에 포함한다.
+
 ## Git 규칙 요약
 - 작업 흐름: **Issue → feature 브랜치 → 커밋 → PR → develop 머지**.
 - 브랜치 전략: **Git Flow** (`main`, `develop`, `feature/*`, `release/*`, `hotfix/*`). `main`/`develop`에 직접 커밋하지 않는다.
